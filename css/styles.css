@@ -307,3 +307,36 @@
     letter-spacing:.09em;
   }
 }
+
+
+/* Disuasión ligera para móvil y escritorio */
+body{-webkit-touch-callout:none;}
+img, a, button{-webkit-user-drag:none;}
+:not(input):not(textarea){-webkit-tap-highlight-color:transparent;}
+input, textarea, select{user-select:text;-webkit-user-select:text;}
+
+
+/* Ajustes finales solicitados por el cliente */
+.form-footer{justify-content:flex-start;align-items:center;gap:14px;flex-wrap:wrap}
+.form-footer small{display:none}
+.footer-connect{display:flex;flex-direction:column;align-items:stretch;gap:14px}
+.footer-back{display:none}
+.social-arrow{display:none}
+@media(max-width:680px){
+  .form-heading{display:block}
+  .form-heading p{margin-top:10px}
+  .contact-form{padding-bottom:24px}
+  .site-footer .footer-top{gap:16px}
+  .site-footer .footer-connect{gap:12px}
+  .site-footer .social-footer{padding-top:10px;gap:10px;border-top:1px solid rgba(255,255,255,.16)}
+  .site-footer .social-link,
+  .site-footer .social-link:not(:first-child){
+    grid-template-columns:42px minmax(0,1fr);
+    min-height:72px;
+    padding:14px 14px;
+  }
+  .site-footer .social-icon{width:42px;height:42px;flex:0 0 42px}
+  .site-footer .social-link>span:nth-child(2){font-size:14px;letter-spacing:.12em}
+  .site-footer .social-link small{font-size:11px;margin-top:5px}
+  .site-footer .footer-bottom{display:grid;grid-template-columns:1fr;gap:6px;text-align:left;padding:14px 18px 18px;font-size:9px}
+}

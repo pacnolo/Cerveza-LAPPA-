@@ -1,7 +1,25 @@
-/* Lappa | Interacciones sin dependencias, manteniendo la página independiente del servidor. */
 'use strict';
 (() => {
   const $ = (selector, root = document) => root.querySelector(selector);
+
+  const blockedCombos = new Set(['i','j','c','u','s']);
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.addEventListener('dragstart', event => {
+    const tag = (event.target && event.target.tagName ? event.target.tagName.toLowerCase() : '');
+    if (['img','a'].includes(tag)) event.preventDefault();
+  });
+  document.addEventListener('keydown', event => {
+    const key = (event.key || '').toLowerCase();
+    const ctrlShiftCombo = event.ctrlKey && event.shiftKey && ['i','j','c'].includes(key);
+    const ctrlCombo = event.ctrlKey && blockedCombos.has(key);
+    const blockedKey = event.key === 'F12' || event.keyCode === 123;
+    if (blockedKey || ctrlShiftCombo || ctrlCombo) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+    }
+  }, true);
+
   const menuToggle = $('.menu-toggle');
   const mobileMenu = $('#mobile-menu');
   const closeMenu = () => {
@@ -17,7 +35,7 @@
       menuToggle.setAttribute('aria-expanded', String(opening));
       menuToggle.setAttribute('aria-label', opening ? 'Cerrar menú' : 'Abrir menú');
     });
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    mobileMenu.querySelectorAll('a, button').forEach(a => a.addEventListener('click', closeMenu));
     window.addEventListener('resize', () => { if (window.innerWidth > 920) closeMenu(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
   }
@@ -45,8 +63,6 @@
   document.querySelectorAll('[data-open-expo]').forEach(button => button.addEventListener('click', openExpo));
   $('#expo-close')?.addEventListener('click', closeExpo);
   if (expoDialog) expoDialog.addEventListener('close', syncLock);
-
-  /* Mostrar la promoción al abrir la página. No requiere interacción anterior. */
   if (expoDialog) openExpo();
 
   const beers = {
@@ -85,9 +101,13 @@
     const name = $('#contact-name').value.trim();
     const topic = $('#contact-topic').value;
     const message = $('#contact-message').value.trim();
-    const text = `Hola, soy ${name}. Me interesa: ${topic}.${message ? `\nMi mensaje: ${message}` : ''}\n\nLos contacté a través de su página web.`;
+    const text = `Hola, soy ${name}. Me interesa: ${topic}.${message ? `
+Mi mensaje: ${message}` : ''}
+
+Los contacté a través de su página web.`;
     window.open('https://wa.me/525520799807?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
   });
+
   const year = $('#year');
   if (year) year.textContent = String(new Date().getFullYear());
 })();
