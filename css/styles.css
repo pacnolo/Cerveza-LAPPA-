@@ -89,3 +89,80 @@
   .social-link>span.social-title{font-size:11px;letter-spacing:.08em}
   .social-link,.social-link:not(:first-child){padding:10px 6px}
 }
+
+/* LAPPA | 23 oct 2026: alineación de fotografías y jerarquía de la sección Cervezas.
+   Cada fotografía conserva su proporción íntegra sin recortar textos del arte. */
+.expo-modal-gallery{grid-template-columns:minmax(0,.626fr) minmax(0,.748fr);height:auto;min-height:0;align-items:start}
+.expo-modal-gallery .expo-img{
+  display:grid;
+  grid-template-rows:auto auto;
+  align-items:stretch;
+  justify-items:stretch;
+  gap:8px;
+  height:auto;
+  min-height:0;
+}
+.expo-photo-frame{
+  position:relative;
+  isolation:isolate;
+  width:100%;
+  height:auto;
+  min-height:0;
+  min-width:0;
+  overflow:hidden;
+  border-radius:14px;
+  background:#19271d;
+  display:grid;
+  place-items:center;
+}
+.expo-stand .expo-photo-frame{aspect-ratio:325/519}
+.expo-poster .expo-photo-frame{aspect-ratio:320/428}
+.expo-photo-frame::before{
+  content:"";
+  position:absolute;
+  inset:-22px;
+  background-position:center;
+  background-size:cover;
+  filter:blur(18px) brightness(.53) saturate(.82);
+  opacity:.9;
+  z-index:0;
+}
+.expo-stand .expo-stand .expo-photo-frame{aspect-ratio:325/519}
+.expo-poster .expo-photo-frame{aspect-ratio:320/428}
+.expo-photo-frame::before{background-image:url('../img/Stand.png')}
+.expo-poster .expo-stand .expo-photo-frame{aspect-ratio:325/519}
+.expo-poster .expo-photo-frame{aspect-ratio:320/428}
+.expo-photo-frame::before{background-image:url('../img/ExpoCervezaMex2026.png')}
+.expo-modal-gallery .expo-photo-frame img{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:0;
+  max-height:100%;
+  flex:none;
+  object-fit:contain;
+  object-position:center center;
+  background:transparent;
+  border-radius:0;
+}
+.expo-modal-gallery .expo-img figcaption{min-height:14px;display:flex;align-items:center;justify-content:center}
+.beer-section .beer-heading{display:block;margin:0}
+.beer-section .beer-heading .eyebrow{margin:0 0 13px}
+.beer-section .beer-heading h2{margin:0}
+.beer-description{max-width:1010px;display:grid;gap:8px;margin:17px 0 31px}
+.beer-description p{margin:0;color:#485249;font-size:15px;line-height:1.72}
+.beer-description strong{color:#1c2a20}
+@media(max-width:680px){
+  .expo-modal-gallery{grid-template-columns:minmax(0,.626fr) minmax(0,.748fr)}
+  .expo-modal-gallery .expo-img:nth-child(2){display:grid}
+  .expo-modal-gallery .expo-photo-frame{border-radius:9px}
+  .beer-description{margin:17px 0 27px;gap:11px}
+  .beer-description p{font-size:14px;line-height:1.73}
+}
+
+/* Mantener las fotos del producto dentro del área reservada de cada tarjeta. */
+.beer-picture{min-height:0;grid-template-rows:minmax(0,1fr);overflow:hidden}
+.beer-picture img{display:block;max-height:100%;min-height:0;max-width:100%;object-fit:contain}
+.beer-card-bottom{position:relative;z-index:1}
