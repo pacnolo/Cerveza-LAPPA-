@@ -340,3 +340,7 @@ input, textarea, select{user-select:text;-webkit-user-select:text;}
   .site-footer .social-link small{font-size:11px;margin-top:5px}
   .site-footer .footer-bottom{display:grid;grid-template-columns:1fr;gap:6px;text-align:left;padding:14px 18px 18px;font-size:9px}
 }
+
+/* Cierre limpio en dispositivos compactos. */
+.form-footer small,.footer-back{display:none!important}
+@media(max-width:680px){.site-footer .social-arrow{display:none!important}}

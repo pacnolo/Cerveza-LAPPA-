@@ -2,7 +2,7 @@
 (() => {
   const $ = (selector, root = document) => root.querySelector(selector);
 
-  const blockedCombos = new Set(['i','j','c','u','s']);
+  const blockedCombos = new Set(['u','s']);
   document.addEventListener('contextmenu', event => event.preventDefault());
   document.addEventListener('dragstart', event => {
     const tag = (event.target && event.target.tagName ? event.target.tagName.toLowerCase() : '');
