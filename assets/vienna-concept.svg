@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="850" viewBox="0 0 420 850" role="img" aria-labelledby="title desc">
+ <title id="title">Ilustración conceptual de cerveza VIENNA Lappa</title>
+ <desc id="desc">Representación artística de una lata, no corresponde a un envase oficial.</desc>
+ <defs>
+  <linearGradient id="metal" x1="0" x2="1"><stop offset="0" stop-color="#6c6b67"/><stop offset=".13" stop-color="#eeeeea"/><stop offset=".5" stop-color="#acada7"/><stop offset=".85" stop-color="#f9f9f5"/><stop offset="1" stop-color="#72736d"/></linearGradient>
+  <linearGradient id="body" x1="0" x2="1"><stop offset="0" stop-color="#964719"/><stop offset=".2" stop-color="#FFAF71"/><stop offset=".74" stop-color="#FFAF71"/><stop offset="1" stop-color="#964719"/></linearGradient>
+  <linearGradient id="highlight" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".09"/><stop offset=".18" stop-color="#fff" stop-opacity=".34"/><stop offset=".33" stop-color="#fff" stop-opacity="0"/><stop offset=".85" stop-color="#fff" stop-opacity=".1"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="16"/></filter>
+ </defs>
+ <ellipse cx="216" cy="804" rx="132" ry="19" fill="#000" opacity=".32" filter="url(#shadow)"/>
+ <rect x="68" y="67" width="284" height="705" rx="46" fill="url(#metal)"/>
+ <rect x="73" y="93" width="274" height="649" rx="33" fill="url(#body)"/>
+ <path d="M80 109q130 -16 260 0v624q-130 24-260 0z" fill="url(#highlight)"/>
+ <rect x="92" y="70" width="235" height="26" rx="12" fill="url(#metal)"/>
+ <ellipse cx="210" cy="68" rx="118" ry="23" fill="#dbdad4" stroke="#74736d" stroke-width="5"/>
+ <ellipse cx="210" cy="68" rx="86" ry="13" fill="#95948d"/>
+ <ellipse cx="210" cy="68" rx="46" ry="7" fill="#d7d7d1"/>
+ <path d="M87 739q124 18 246 0" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="3"/>
+ <text x="210" y="160" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="bold" letter-spacing="5" fill="#492512">CERVEZA ARTESANAL</text>
+ <path d="M110 184 H310" stroke="#492512" stroke-opacity=".6" stroke-width="2"/>
+ <text x="210" y="372" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="87" font-weight="900" letter-spacing="-9" fill="#492512">LAPPA</text>
+ <path d="M132 266C150 220 188 233 212 200c18 30 52 31 74 64M133 280Q210 213 290 280" fill="none" stroke="#492512" stroke-opacity=".5" stroke-width="7" stroke-linecap="round"/>
+ <circle cx="210" cy="267" r="11" fill="#492512"/>
+ <path d="M118 403H302" stroke="#492512" stroke-width="2"/>
+ <text x="210" y="483" text-anchor="middle" font-family="Arial,sans-serif" font-size="49" font-weight="900" letter-spacing="2" fill="#492512">VIENNA</text>
+ <text x="210" y="521" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2.3" fill="#492512">MALTOSA &amp; TOSTADA</text>
+ <path d="M118 548H302" stroke="#492512" stroke-width="2"/>
+ <text x="210" y="613" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#492512">WHAT MATTERS</text>
+ <text x="210" y="635" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#492512">IS INSIDE.</text>
+ <text x="210" y="705" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#492512">IZTAPALAPA · CDMX</text>
+ </svg>
